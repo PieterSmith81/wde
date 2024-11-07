@@ -1,9 +1,8 @@
 // Import (a.k.a. require) third-party Node.js packages.
 /* Below is our Stripe test secret API key as obtainted from:
 https://dashboard.stripe.com/test/apikeys */
-const stripe = require('stripe')(
-  'sk_test_51O2ChcEs7FWTwweJCFk36f1nSsUAV5tYoB04hRETHqCjuUtqu7QVhaDxt2Dfwe8OlcGjGEKnUutHYYRa2pdk9CYZ00RkoS6wXf'
-);
+require('dotenv').config();
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 // Import (a.k.a. require) our own, custom Node.js packages.
 const Order = require('../models/order.model');
