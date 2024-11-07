@@ -1,6 +1,6 @@
 # WDE (Web Developer Essentials)
 
-A comprehensive e-commerce platform with a responsive ordering system and admin backend.
+A comprehensive e-commerce platform with a responsive ordering system and a feature-rich admin backend.
 
 ## Live Website
 
