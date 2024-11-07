@@ -8,7 +8,7 @@ A comprehensive e-commerce platform with a responsive ordering system and a feat
 
 ## Tech Stack
 
-Node, Express, MongoDB, EJS, Stripe API, express-sessions, bcryptjs, csurf, JavaScript, CSS, HTML
+Node, Express, MongoDB, EJS, Stripe API, express-sessions, bcryptjs, csurf, JavaScript, CSS, HTML.
 
 ## Overview
 
