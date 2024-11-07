@@ -1,0 +1,26 @@
+<article class="product-item">
+  <img src="<%= product.imageURL %>" alt="<%= product.title %>" />
+  <div class="product-item-content">
+    <h2><%= product.title %></h2>
+    <div class="product-item-actions">
+      <% if (locals.isAdmin) { %>
+        <a class="btn btn-alt" href="/admin/products/<%= product.id %>"
+          >View & Edit</a
+        >
+        <!-- Note the use of the "data-[identifier]" HTML attributes below
+          to give each product's delete button a distinct product id and CSRF token data values.
+          These distinct data values are then used to create an AJAX request (a.k.a. frontend JS request) in the
+          "/public/scripts/product-management.js" file to delete a specific product on the server side. -->
+        <button
+          class="btn btn-alt"
+          data-productid="<%= product.id %>"
+          data-csrf="<%= locals.csrfToken %>"
+        >
+          Delete
+        </button>
+      <% } else { %>
+        <a class="btn btn-alt" href="/products/<%= product.id %>">View Details</a>
+      <% } %>
+    </div>
+  </div>
+</article>

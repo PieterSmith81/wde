@@ -1,0 +1,29 @@
+<%- include('../../shared/includes/head', { pageTitle: 'Product Details - ' +
+  product.title }) %>
+  <link rel="stylesheet" href="/styles/products.css" />
+  <script src="/scripts/cart-management.js" defer></script>
+</head>
+<body>
+  <%- include('../../shared/includes/header') %>
+  <main id="product-details">
+    <header>
+      <img src="<%= product.imageURL %>" alt="<%= product.title %>" />
+      <div id="product-info">
+        <h1><%= product.title %></h1>
+        <p>$<%= product.price %></p>
+        <!-- Note the use of the "data-[identifier]" HTML attributes below
+        to give each product's Add to Cart button distinct product id and CSRF token data values.
+        These distinct data values are then used to create an AJAX request (a.k.a. frontend JS request) in the
+        "/public/scripts/cart-management.js" file to delete a specific product on the server side. -->
+        <button
+          class="btn"
+          data-productid="<%= product.id %>"
+          data-csrf="<%= locals.csrfToken %>"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </header>
+    <p id="product-description"><%= product.description %></p>
+  </main>
+<%- include('../../shared/includes/footer') %>

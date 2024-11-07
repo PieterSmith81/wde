@@ -1,0 +1,34 @@
+<%- include('../../shared/includes/head', { pageTitle: 'Your Cart' }) %>
+  <link rel="stylesheet" href="/styles/cart.css" />
+  <script src="/scripts/cart-item-management.js" defer></script>
+</head>
+<body>
+  <%- include('../../shared/includes/header') %>
+  <main>
+    <h1>Your Cart</h1>
+    <ul id="cart-items">
+      <!-- Note that the cart is always available (as a JavaScript object) in locals,
+      thanks to our own custom Express cart middleware which is located at: /middlewares/cart.js -->
+      <% for (const cartItem of locals.cart.items) { %>
+        <li>
+          <%- include('includes/cart-item', { item: cartItem }) %>
+        </li>
+      <% } %>
+    </ul>
+    <div id="cart-total">
+      <p>
+        Total: $<span id="cart-total-price"
+          ><%= locals.cart.totalPrice.toFixed(2) %></span
+        >
+      </p>
+      <% if (locals.isAuth && locals.cart.totalPrice > 0) { %>
+        <form action="/orders" method="POST">
+          <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+          <button id="cart-buy-products-btn" class="btn">Buy Products</button>
+        </form>
+      <% } else if (!locals.isAuth) { %>
+        <p id="cart-total-fallback">Please log in to purchase these items.</p>
+      <% } %>
+    </div>
+  </main>
+<%- include('../../shared/includes/footer') %>

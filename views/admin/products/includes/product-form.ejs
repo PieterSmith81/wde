@@ -1,0 +1,72 @@
+<!-- The HTML form below has its encoding type ("enctype" attribute) set to set to "multipart/form-data",
+rather than the default "application/x-www-form-urlencoded".
+An enctype of "multipart/form-data" is required when submitting files,
+for example uploaded files from the image input below, to your Express web server.
+
+Also note that, when the encoding type of a form is set to "multipart/form-data",
+we cannot add our CSRF token using the regular hidden input field method.
+Instead, for multipart/form-data" encoded HTTP request bodies,
+the "csurf" third-party Node.js package supports adding the CSRF token
+as a query parameter on the URL that the request is sent to (as demonstrated below in the form's action attribute). -->
+<form
+  action="<%= submitPath %>?_csrf=<%= locals.csrfToken %>"
+  method="POST"
+  enctype="multipart/form-data"
+>
+  <p>
+    <label for="title">Title</label>
+    <input
+      type="text"
+      id="title"
+      name="title"
+      value="<%= product.title %>"
+      required
+    />
+  </p>
+  <div id="image-upload-control">
+    <p>
+      <label for="image">Image</label>
+      <input
+        type="file"
+        id="image"
+        name="image"
+        accept="image/jpg,image/png"
+        <% if (imageRequired) { %>required<% } %>
+      />
+    </p>
+    <img src="" alt="Selected image" />
+  </div>
+  <p>
+    <label for="summary">Summary</label>
+    <input
+      type="text"
+      id="summary"
+      name="summary"
+      value="<%= product.summary %>"
+      maxlength="250"
+      required
+    />
+  </p>
+  <p>
+    <label for="price">Price</label>
+    <input
+      type="number"
+      id="price"
+      name="price"
+      value="<%= product.price %>"
+      min="0.01"
+      step="0.01"
+      required
+    />
+  </p>
+  <p>
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="7" required>
+<%= product.description %></textarea
+    >
+  </p>
+  <p>
+    <button type="reset" class="btn btn-alt">Reset</button>
+    <button class="btn">Save</button>
+  </p>
+</form>
