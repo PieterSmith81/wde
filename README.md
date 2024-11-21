@@ -6,6 +6,8 @@ A comprehensive e-commerce platform with a responsive ordering system and a feat
 
 ### Coming Soon!
 
+[Please check out my other pinned projects on my GitHub profile in the meantime.](https://github.com/PieterSmith81)
+
 ## Tech Stack
 
 Node, Express, MongoDB, EJS, Stripe API, express-sessions, bcryptjs, csurf, JavaScript, CSS, HTML.
