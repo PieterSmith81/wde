@@ -2,11 +2,11 @@
 
 A comprehensive e-commerce platform with a responsive ordering system and a feature-rich admin backend.
 
-## Live Website
+## Live Demo Website
 
 ### Coming Soon!
 
-[Please check out my other pinned projects on my GitHub profile in the meantime.](https://github.com/PieterSmith81)
+[In the meantime, please check out the other pinned projects on my GitHub profile.](https://github.com/PieterSmith81)
 
 ## Tech Stack
 
