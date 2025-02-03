@@ -23,19 +23,6 @@ as a query parameter on the URL that the request is sent to (as demonstrated bel
       required
     />
   </p>
-  <div id="image-upload-control">
-    <p>
-      <label for="image">Image</label>
-      <input
-        type="file"
-        id="image"
-        name="image"
-        accept="image/jpg,image/png"
-        <% if (imageRequired) { %>required<% } %>
-      />
-    </p>
-    <img src="" alt="Selected image" />
-  </div>
   <p>
     <label for="summary">Summary</label>
     <input
@@ -46,6 +33,12 @@ as a query parameter on the URL that the request is sent to (as demonstrated bel
       maxlength="250"
       required
     />
+  </p>
+  <p>
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="7" required>
+<%= product.description %></textarea
+    >
   </p>
   <p>
     <label for="price">Price</label>
@@ -59,12 +52,19 @@ as a query parameter on the URL that the request is sent to (as demonstrated bel
       required
     />
   </p>
-  <p>
-    <label for="description">Description</label>
-    <textarea id="description" name="description" rows="7" required>
-<%= product.description %></textarea
-    >
-  </p>
+  <div id="image-upload-control">
+    <p>
+      <label for="image">Image</label>
+      <input
+        type="file"
+        id="image"
+        name="image"
+        accept="image/jpg,image/png"
+        <% if (imageRequired) { %>required<% } %>
+      />
+    </p>
+    <img src="" alt="Selected image" />
+  </div>
   <p>
     <button type="reset" class="btn btn-alt">Reset</button>
     <button class="btn">Save</button>

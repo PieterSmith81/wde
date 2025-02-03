@@ -6,34 +6,24 @@
   "author": "Pieter Smith",
   "license": "ISC",
   "main": "index.js",
-  "//": [
-    "IMPORTANT: I had to downgrade the mongodb driver Node.js package below from version 5 (ver. 5.7.0) to version 4 (ver. 4.16.0).",
-    "This is because the connect-mongodb-session Express session store package below is outdated (and has not been updated in over two years).",
-    "The latest connect-mongodb-session package is only compatible with the mongodb driver version 4, not with version 5.",
-    "For full details on the incompatibility of the connect-mongodb-session package with mongodb 5 driver package,",
-    "see the IMPORTANT comment under the /admin GET route in the /routes/demo.js file.",
-    "IN THE FUTURE, YOU MIGHT WANT TO USE THE connect-mongo MONGODB-BASED SESSION STORE FOR YOUR EXPRESS SESSIONS,",
-    "RATHER THAN THE connect-mongodb-session MONGODB-BASED SESSION STORE.",
-    "The connect-mongo session store seems to support the mongodb version 5 driver, is better maintained, and is more downloaded/used",
-    "than the connect-mongodb-session session store that is used in the Academind tutorials."
-  ],
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "connect-mongodb-session": "^3.1.1",
+    "connect-mongodb-session": "^5.0.0",
     "csurf": "^1.11.0",
-    "dotenv": "^16.4.5",
-    "ejs": "^3.1.9",
-    "express": "^4.18.2",
-    "express-session": "^1.17.3",
-    "mongodb": "^4.16.0",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "mongodb": "^6.13.0",
     "multer": "^1.4.5-lts.1",
-    "stripe": "^14.1.0",
-    "uuid": "^9.0.1"
+    "stripe": "^17.6.0",
+    "uuid": "^11.0.5"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.1.9"
   }
 }

@@ -67,6 +67,16 @@
         />
       </p>
       <p>
+        <label for="city">City</label>
+        <input
+          type="text"
+          id="city"
+          name="city"
+          value="<%= inputData.city %>"
+          required
+        />
+      </p>
+      <p>
         <label for="postal">Postal Code</label>
         <input
           type="text"
@@ -75,16 +85,6 @@
           minlength="5"
           maxlength="7"
           value="<%= inputData.postal %>"
-          required
-        />
-      </p>
-      <p>
-        <label for="city">City</label>
-        <input
-          type="text"
-          id="city"
-          name="city"
-          value="<%= inputData.city %>"
           required
         />
       </p>
